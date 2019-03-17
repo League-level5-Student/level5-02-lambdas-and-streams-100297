@@ -9,14 +9,15 @@ public class StreamSorter {
 		Integer[] nums = new Integer[50];
 		for(int i = 0; i < nums.length; i++) {
 			Random rGen = new Random();
-			nums[i] = rGen.nextInt();
+			nums[i] = rGen.nextInt(50);
 		}
 		
 		//1. Convert the Integer array to Stream object.
-		
+		Stream<Integer> netflix = Arrays.stream(nums);
 		//2. Use the sorted method of the stream to sort the numbers.
-		
+		Stream<Integer> sortedy = netflix.sorted();
 		//3. Use the forEach method with a lambda to print all the elements of the sorted Stream.
 		//   They should be in ascending order.
+				sortedy.forEach((i) -> { System.out.println(i);});
 	}
 }
